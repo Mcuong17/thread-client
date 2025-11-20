@@ -16,7 +16,7 @@ export const routesConfig = [
       path: ROUTES.LOGIN,
       element: LoginPage,
       layout: 'auth',
-      isPublic: true,
+      // isPublic: true,
     },
     {
       path: ROUTES.REGISTER,
