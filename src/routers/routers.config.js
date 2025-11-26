@@ -16,13 +16,13 @@ export const routesConfig = [
       path: ROUTES.LOGIN,
       element: LoginPage,
       layout: 'auth',
-      // isPublic: true,
+      isPublic: false,
     },
     {
       path: ROUTES.REGISTER,
       element: RegisterPage,
       layout: 'auth',
-      isPublic: true,
+      isPublic: false,
     },
     
     // Main routes - Private (require login)
@@ -50,6 +50,6 @@ export const routesConfig = [
       path: ROUTES.NOT_FOUND,
       element: NotFoundPage,
       layout: 'none',
-      isPublic: true,
+      isPublic: false,
     },
   ]

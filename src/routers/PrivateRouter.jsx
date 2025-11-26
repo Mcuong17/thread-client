@@ -1,6 +1,6 @@
 import { ROUTES } from "@/utils/constants"
 import { useSelector } from "react-redux"
-import { useLocation, Naviagte } from "react-router-dom"
+import { useLocation } from "react-router-dom"
 
 
 const PrivateRouter = ({ children }) => {

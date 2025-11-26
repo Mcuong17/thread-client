@@ -16,17 +16,20 @@ console.log('a', layouts)
 
 const AppRouter = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="main-wrapper">
       <Routes>
         {routesConfig.map((route) => {
           const Layouts = layouts[route.layout] || NoLayout;
           const Element = route.element;
 
-          const ComponentwithLayout = (
+          const ComponentWithLayout = () => (
             <Layouts>
-              <Element></Element>
+              <Element />
             </Layouts>
           );
+
+
+         
 
           //Return layout need login
           if (route.isPrivate) {
@@ -35,9 +38,9 @@ const AppRouter = () => {
                 key={route.path}
                 path={route.path}
                 element={
-                  <PrivateRouter>
-                    <ComponentwithLayout></ComponentwithLayout>
-                  </PrivateRouter>
+                  // <PrivateRouter>
+                    <ComponentWithLayout></ComponentWithLayout>
+                  // </PrivateRouter>
                 }
               ></Route>
             );
@@ -45,14 +48,15 @@ const AppRouter = () => {
 
           //Return layout have login
           if (route.isPublic) {
+             
             return (
               <Route
                 key={route.path}
                 path={route.path}
                 element={
-                  <PublicRoute>
-                    <ComponentwithLayout />
-                  </PublicRoute>
+                  // <PublicRoute>
+                    <ComponentWithLayout />
+                  // </PublicRoute>
                 }
               ></Route>
             );
@@ -63,7 +67,7 @@ const AppRouter = () => {
             <Route
               key={route.path}
               path={route.path}
-              element={ComponentwithLayout}
+              element={ComponentWithLayout}
             ></Route>
           );
         })}
