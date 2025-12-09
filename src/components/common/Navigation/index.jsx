@@ -26,7 +26,7 @@ function Navigation() {
       path: ROUTES.HOME, 
       icon: Home, 
       label: 'Home',
-      end: true // Exact match
+      end: true 
     },
     { 
       path: ROUTES.SEARCH, 

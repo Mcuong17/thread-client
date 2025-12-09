@@ -110,6 +110,11 @@
   --sidebar-ring: oklch(0.556 0 0);
 }
 
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, Roboto, Helvetica,
+    Arial, sans-serif;
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;

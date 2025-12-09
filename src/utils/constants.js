@@ -6,7 +6,7 @@ export const ROUTES = {
     RESET_PASSWORD: '/resetpassword',
 
     //Main Router
-    HOME: '/home',
+    HOME: '/',
     FOR_YOU: 'foryou',
     FOLLOWING: 'following',
 

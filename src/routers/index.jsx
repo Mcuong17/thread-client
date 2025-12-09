@@ -3,8 +3,7 @@ import { routesConfig } from "./routers.config";
 import DefaultLayout from "@/components/layout/DefaultLayout";
 import AuthLayout from "@/components/layout/AuthLayout";
 import NoLayout from "@/components/layout/NoLayout";
-import PrivateRouter from "./PrivateRouter";
-import PublicRoute from "./PublicRouter";
+import { useTheme } from "@/hooks/useTheme";
 
 const layouts = {
   default: DefaultLayout,
@@ -12,9 +11,9 @@ const layouts = {
   none: NoLayout,
 };
 
-console.log('a', layouts)
 
 const AppRouter = () => {
+  useTheme()
   return (
     <div className="main-wrapper">
       <Routes>
@@ -38,9 +37,9 @@ const AppRouter = () => {
                 key={route.path}
                 path={route.path}
                 element={
-                  // <PrivateRouter>
+
                     <ComponentWithLayout></ComponentWithLayout>
-                  // </PrivateRouter>
+
                 }
               ></Route>
             );
@@ -54,9 +53,9 @@ const AppRouter = () => {
                 key={route.path}
                 path={route.path}
                 element={
-                  // <PublicRoute>
-                    <ComponentWithLayout />
-                  // </PublicRoute>
+
+                    <ComponentWithLayout></ComponentWithLayout>
+
                 }
               ></Route>
             );

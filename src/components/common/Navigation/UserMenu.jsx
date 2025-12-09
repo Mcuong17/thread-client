@@ -12,7 +12,7 @@ import {
   ChevronRight,
   Menu
 } from 'lucide-react'
-import Modal from '@/components/common/Modal/Modal'
+import Modal from '@/components/common/Modal'
 import { ROUTES } from '@/utils/constants'
 import { useTheme } from '@/hooks/useTheme'
 import { cn } from '@/lib/utils'

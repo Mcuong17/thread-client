@@ -25,14 +25,33 @@ axiosInstance.interceptors.request.use(
 )
 
 axiosInstance.interceptors.response.use(
-    (response) => response.data,
-    (error) => {
-      if (error.response?.status === 401) {
-        localStorage.removeItem('access_token')
-        window.location.href = '/login'
-      }
-      return Promise.reject(error)
+  (response) => response.data,
+
+  (error) => {
+    const data = error.response?.data;
+
+    let message = "Something went wrong";
+
+    if (data?.message) {
+      message = data.message;
     }
-  )
+
+    if (data?.errors) {
+      const key = Object.keys(data.errors)[0];
+      message = data.errors[key][0];
+    }
+
+    error.errorDesc = message;
+
+
+    if (error.response?.status === 401) {
+      localStorage.removeItem("access_token");
+      window.location.href = "/login";
+    }
+
+    return Promise.reject(error);
+  }
+);
+
   
   export default axiosInstance

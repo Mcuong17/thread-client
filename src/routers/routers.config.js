@@ -16,13 +16,13 @@ export const routesConfig = [
       path: ROUTES.LOGIN,
       element: LoginPage,
       layout: 'auth',
-      isPublic: false,
+      isPublic: true,
     },
     {
       path: ROUTES.REGISTER,
       element: RegisterPage,
       layout: 'auth',
-      isPublic: false,
+      isPublic: true,
     },
     
     // Main routes - Private (require login)
